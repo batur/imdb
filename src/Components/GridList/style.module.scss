@@ -1,0 +1,8 @@
+@import '../../Styles/theme.scss';
+
+.list {
+  display: grid;
+  column-gap: 0.6em;
+  row-gap: 2.8em;
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+}

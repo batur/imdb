@@ -1,0 +1,33 @@
+@import '../../Styles/theme.scss';
+
+.btnPrimary {
+  display: flex;
+  padding: 0.6em 1em;
+  background-color: transparent;
+  border: none;
+  color: $text-1;
+  transition: 200ms;
+  font-weight: 600;
+  font-size: 14px;
+
+  &:hover {
+    transition: 200ms;
+    background-color: lighten($color: $base-blue, $amount: 10%);
+  }
+}
+
+.btnSecondary {
+  display: flex;
+  padding: 0.6em 1em;
+  background-color: $gray-light;
+  color: $text-1;
+  border: none;
+  transition: 200ms;
+  font-weight: 600;
+  font-size: 14px;
+
+  &:hover {
+    transition: 200ms;
+    background-color: lighten($color: $gray-light, $amount: 10%);
+  }
+}

@@ -1,0 +1,42 @@
+@import '../../Styles/theme.scss';
+
+.searchBox {
+  display: flex;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.18);
+}
+.input {
+  font-size: 0.8em;
+  font-weight: 400;
+  border: none;
+  padding: 0.6em 0 0.6em 1em;
+
+  ::placeholder {
+    color: $text-2;
+  }
+}
+
+.searchbtn {
+  background-color: $base-blue;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 0.2em 0.4em;
+  transition: 200ms;
+
+  &:hover {
+    transition: 200ms;
+    background-color: lighten($color: $base-blue, $amount: 5%);
+  }
+  svg {
+    font-size: 1.5em;
+
+    path {
+      fill: $text-1;
+    }
+  }
+}

@@ -6,8 +6,9 @@
       {
         "root": ["./"],
         "alias": {
+          "@GlobalCss": "./src/Styles",
           "@Components": "./src/Components",
-          "@GlobalCss": "./src/Styles"
+          "@Elements": "./src/Elements"
         }
       }
     ]

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Button from '@Elements/Button'
 import styles from './style.module.scss'
 
-export default function index() {
+export default function index({ subtitle }) {
   return (
     <>
       <header className={styles.header}>
@@ -24,7 +24,7 @@ export default function index() {
         </div>
         <div className={styles.sub}>
           <div className={styles.container}>
-            <h2 className={styles.subtitle}>Popular Titles</h2>
+            <h2 className={styles.subtitle}>Popular {subtitle}</h2>
           </div>
         </div>
       </header>

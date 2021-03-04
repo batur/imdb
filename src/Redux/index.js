@@ -1,30 +1,32 @@
-import { createStore } from 'redux'
-
-const increment = () => {
-  return {
-    type: 'INCREMENT',
-  }
+const initialState = {
+  changedFilter: [],
 }
 
-const decrement = () => {
-  return {
-    type: 'DECREMENT',
-  }
-}
+const SORT_ALPHABET = 'SORT ALPHABET'
+const SORT_YEAR = 'SORT YEAR'
+const FILTER_TITLE = 'FILTER TITLE'
+const LOAD_DATA = 'LOAD DATA'
 
-const counter = (state = 0, action) => {
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1
-    case 'DECREMENT':
-      return state - 1
-    default:
-      return state
-  }
-}
+export const sortByAlphabet = (payload) => ({
+  type: SORT_ALPHABET,
+  payload,
+})
 
-let store = createStore(counter)
+export const sortByYear = (payload) => ({
+  type: SORT_YEAR,
+  payload,
+})
 
-store.subscribe(() => console.log(store.getState()))
+export const filterByTitle = (payload) => ({
+  type: FILTER_TITLE,
+  payload,
+})
 
-store.dispatch(increment())
+export const loadData = (payload) => ({
+  type: LOAD_DATA,
+  payload,
+})
+
+const filterItems = (state = initialState, action) => {}
+
+export default filterItems

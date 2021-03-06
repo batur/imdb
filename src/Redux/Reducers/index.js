@@ -1,10 +1,6 @@
-import filterReducer from '../Reducers/filter'
-import sortReducer from '../Reducers/sort'
 import { combineReducers } from 'redux'
+import { postReducer } from './postReducer'
 
-const allReducers = combineReducers({
-  sort: sortReducer,
-  filter: filterReducer,
+export default combineReducers({
+  postData: postReducer,
 })
-
-export default allReducers

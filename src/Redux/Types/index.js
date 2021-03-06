@@ -1,0 +1,5 @@
+export const BEGIN = 'BEGIN'
+export const SUCCESS = 'SUCCESS'
+export const ERROR = 'ERROR'
+export const FILTER = 'FILTER'
+export const SORT = 'SORT'

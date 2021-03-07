@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from './style.module.scss'
 
-function GridItem() {
+function GridItem({ title, postersrc }) {
   return (
     <article className={styles.item}>
-      <img src="/dummy.jpg" />
+      <img src={postersrc} alt={title} loading="lazy" />
       <header>
-        <p>Title</p>
+        <p>{title}</p>
       </header>
     </article>
   )

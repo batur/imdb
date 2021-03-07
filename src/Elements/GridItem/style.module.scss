@@ -3,5 +3,19 @@
 .item {
   display: inline-flex;
   flex-direction: column;
-  justify-content: center;
+
+  &:hover {
+    img {
+      box-shadow: 0 10px 12px 5px rgba($color: #000000, $alpha: 0.4),
+        2px 0 5px rgba($color: #000000, $alpha: 0.4),
+        -2px 0 5px rgba($color: #000000, $alpha: 0.4);
+      transition: 1000ms;
+    }
+  }
+  img {
+    box-shadow: 0 1px 10px rgba($color: #000000, $alpha: 0.4),
+      1px 0 10px rgba($color: #000000, $alpha: 0.4);
+    border-radius: 3px;
+    transition: 1000ms;
+  }
 }

@@ -1,19 +1,9 @@
-import React from 'react'
-import GridItem from '@Elements/GridItem'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import styles from './style.module.scss'
 
-function GridList() {
-  return (
-    <section className={styles.list}>
-      <GridItem />
-      <GridItem />
-      <GridItem />
-      <GridItem />
-      <GridItem />
-      <GridItem />
-      <GridItem />
-    </section>
-  )
+function GridList({ children }) {
+  return <section className={styles.list}>{children}</section>
 }
 
 export default GridList

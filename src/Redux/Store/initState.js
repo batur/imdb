@@ -1,6 +1,5 @@
 export const initialState = {
-  movies: [],
-  series: [],
+  posts: [],
   isLoading: false,
   message: '',
 }

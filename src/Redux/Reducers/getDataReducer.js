@@ -1,6 +1,6 @@
 import { initialState } from '../Store/initState'
 import * as types from '../Types'
-import { sortAsc } from '../Helpers'
+import { sortAsc, splitting } from '../Helpers'
 export const getDataReducer = (state = initialState, action, type) => {
   switch (action.type) {
     case types.BEGIN:
@@ -9,21 +9,22 @@ export const getDataReducer = (state = initialState, action, type) => {
         isLoading: true,
         error: '',
       }
-    case types.SUCCESS:
-      const newState = Object.assign([], action.payload.entries)
-      const newMovies = []
-      const newSeries = []
-      newState.map((item) => {
-        if (item.programType == 'series' && item.releaseYear >= 2015) {
-          newSeries.push(item)
-        } else if (item.programType == 'movie' && item.releaseYear >= 2015) {
-          newMovies.push(item)
-        }
-      })
+    case types.MOVIES_SUCCESS:
+      const newMoviesState = Object.assign([], action.payload.entries)
+      const newMovies = splitting(newMoviesState, 'movies')
       return {
         ...state,
-        movies: sortAsc(newMovies, 'title'),
-        series: sortAsc(newSeries, 'title'),
+        posts: sortAsc(newMovies, 'title'),
+        isLoading: false,
+        error: '',
+      }
+
+    case types.SERIES_SUCCESS:
+      const newSeriesState = Object.assign([], action.payload.entries)
+      const newSeries = splitting(newSeriesState, 'series')
+      return {
+        ...state,
+        posts: sortAsc(newSeries, 'title'),
         isLoading: false,
         error: '',
       }
@@ -31,7 +32,6 @@ export const getDataReducer = (state = initialState, action, type) => {
     case types.ERROR:
       return {
         ...state,
-        posts: [],
         isLoading: false,
         error: action.payload,
       }

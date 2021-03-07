@@ -6,14 +6,14 @@ import Filter from '@Components/Filter'
 import GridList from '@Components/GridList'
 import GridItem from 'src/Elements/GridItem'
 import { useDispatch, useSelector } from 'react-redux'
-import { getData } from 'src/Redux/Actions/index'
+import { getMovieData } from 'src/Redux/Actions/index'
 
 const Movies = () => {
   const dispatch = useDispatch()
-  const { movies, isLoading, message } = useSelector((state) => state.postData)
+  const { posts, isLoading, message } = useSelector((state) => state.postData)
 
   useEffect(() => {
-    message === '' ? dispatch(getData()) : console.log('dolu')
+    message === '' ? dispatch(getMovieData()) : console.log('dolu')
   }, [])
 
   return (
@@ -27,8 +27,8 @@ const Movies = () => {
               <p>Loading...</p>
             ) : (
               [
-                movies &&
-                  movies.map((item) => (
+                posts &&
+                  posts.map((item) => (
                     <GridItem
                       key={item.title}
                       postersrc={item.images['Poster Art'].url}

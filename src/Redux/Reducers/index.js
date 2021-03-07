@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
-import { postReducer } from './postReducer'
+import { getDataReducer } from './getDataReducer'
+import { sorReducer } from './filterReducer'
+import { filterReducer } from './sortReducer'
 
 export default combineReducers({
-  postData: postReducer,
+  postData: getDataReducer,
 })

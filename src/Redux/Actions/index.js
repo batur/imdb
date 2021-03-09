@@ -27,7 +27,7 @@ export const sortByYear = (payload) => (dispatch) => {
 export const filterByTitle = (payload) => (dispatch) => {
   if (payload.value.length == 0) {
     dispatch({ type: types.FILTER_SET, payload })
-  } else {
+  } else if (payload.value.length >= 3) {
     dispatch({ type: types.FILTER, payload })
   }
 }

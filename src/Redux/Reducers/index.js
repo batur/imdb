@@ -39,7 +39,7 @@ const filterReducers = (state = initialState, action) => {
         message: action.payload,
       }
     case types.SORT_TITLE:
-      const sortTitle = Object.assign([{}], state.posts)
+      const sortTitle = Object.assign([{}], state.appliedFilters)
       const sortedTitle =
         action.payload.direction === 'asc'
           ? sortAsc(sortTitle, 'title')
@@ -49,7 +49,7 @@ const filterReducers = (state = initialState, action) => {
         appliedFilters: sortedTitle,
       }
     case types.SORT_YEAR:
-      const sortYear = Object.assign([{}], state.posts)
+      const sortYear = Object.assign([{}], state.appliedFilters)
       const sortedYear =
         action.payload.direction === 'asc'
           ? sortAsc(sortYear, 'releaseYear')

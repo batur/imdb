@@ -23,6 +23,8 @@ const Movies = (props) => {
           <GridList>
             {props.isLoading ? (
               <p>Loading...</p>
+            ) : props.message ? (
+              <p>{props.message}</p>
             ) : (
               [
                 props.posts.map((item) => (

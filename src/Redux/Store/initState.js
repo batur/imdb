@@ -1,6 +1,6 @@
 export const initialState = {
   posts: [],
-  filteredPosts: [],
+  appliedFilters: [],
   isLoading: false,
   message: '',
 }

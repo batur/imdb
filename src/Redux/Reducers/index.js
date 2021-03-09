@@ -16,7 +16,6 @@ const filterReducers = (state = initialState, action) => {
       return {
         ...state,
         posts: newMovies.splice(0, 21),
-        appliedFilters: null,
         isLoading: false,
         message: '',
       }
@@ -27,7 +26,6 @@ const filterReducers = (state = initialState, action) => {
       return {
         ...state,
         posts: newSeries.splice(0, 21),
-        appliedFilters: null,
         isLoading: false,
         message: '',
       }
@@ -48,7 +46,7 @@ const filterReducers = (state = initialState, action) => {
           : sortDesc(sortTitle, 'title')
       return {
         ...state,
-        posts: sortedTitle,
+        appliedFilters: sortedTitle,
       }
     case types.SORT_YEAR:
       const sortYear = Object.assign([{}], state.posts)
@@ -58,17 +56,21 @@ const filterReducers = (state = initialState, action) => {
           : sortDesc(sortYear, 'releaseYear')
       return {
         ...state,
-        posts: sortedYear,
+        appliedFilters: sortedYear,
       }
+    case types.FILTER_SET:
+      return { ...state, appliedFilters: state.posts }
     case types.FILTER:
-      const filterTitle = Object.assign([{}], state)
-      const value = action.payload.value
-      var filteredItems = filterTitle.posts.filter((item) => {
-        return value.length >= 3 ? item.title.toLowerCase().includes(value) : filterTitle.posts
+      let value = action.payload.value
+      let filteredValues = state.posts.filter((item) => {
+        return item.title.toLowerCase().includes(value)
       })
-
+      return { ...state, appliedFilters: filteredValues }
     default:
-      return { ...state, appliedFilters: filteredItems }
+      return {
+        ...state,
+        appliedFilters: state.posts,
+      }
   }
 }
 

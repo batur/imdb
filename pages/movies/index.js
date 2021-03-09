@@ -10,7 +10,7 @@ import { getMovieData } from 'src/Redux/Actions/index'
 
 const Movies = (props) => {
   const dispatch = useDispatch()
-
+  const items = props.appliedFilters
   useEffect(() => {
     dispatch(getMovieData())
   }, [])
@@ -27,13 +27,14 @@ const Movies = (props) => {
               <p>{props.message}</p>
             ) : (
               [
-                props.posts.map((item) => (
-                  <GridItem
-                    key={item.title}
-                    postersrc={item.images['Poster Art'].url}
-                    title={item.title}
-                  />
-                )),
+                items &&
+                  items.map((item) => (
+                    <GridItem
+                      key={item.title}
+                      postersrc={item.images['Poster Art'].url}
+                      title={item.title}
+                    />
+                  )),
               ]
             )}
           </GridList>
@@ -46,7 +47,6 @@ const Movies = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    posts: state.posts,
     isLoading: state.isLoading,
     message: state.message,
     appliedFilters: state.appliedFilters,

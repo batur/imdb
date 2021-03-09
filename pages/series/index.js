@@ -10,7 +10,7 @@ import { getSeriesData } from 'src/Redux/Actions/index'
 
 const Series = (props) => {
   const dispatch = useDispatch()
-
+  const items = props.appliedFilters
   useEffect(() => {
     dispatch(getSeriesData())
   }, [])
@@ -25,13 +25,14 @@ const Series = (props) => {
               <p>Loading...</p>
             ) : (
               [
-                props.posts.map((item) => (
-                  <GridItem
-                    key={item.title}
-                    postersrc={item.images['Poster Art'].url}
-                    title={item.title}
-                  />
-                )),
+                items &&
+                  items.map((item) => (
+                    <GridItem
+                      key={item.title}
+                      postersrc={item.images['Poster Art'].url}
+                      title={item.title}
+                    />
+                  )),
               ]
             )}
           </GridList>
@@ -44,7 +45,6 @@ const Series = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    posts: state.posts,
     isLoading: state.isLoading,
     message: state.message,
     appliedFilters: state.appliedFilters,

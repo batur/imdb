@@ -5,36 +5,33 @@ import Footer from '@Components/Footer'
 import Filter from '@Components/Filter'
 import GridList from '@Components/GridList'
 import GridItem from 'src/Elements/GridItem'
-import { useDispatch, useSelector } from 'react-redux'
+import { connect, useDispatch } from 'react-redux'
 import { getMovieData } from 'src/Redux/Actions/index'
 
-const Movies = () => {
+const Movies = (props) => {
   const dispatch = useDispatch()
-  const { posts, isLoading, message } = useSelector((state) => state.postData)
 
   useEffect(() => {
-    message === '' ? dispatch(getMovieData()) : console.log('dolu')
+    dispatch(getMovieData())
   }, [])
-
   return (
     <>
       <Header subtitle={'Movies'} />
       <main className={styles.main}>
         <div className={styles.container}>
-          {isLoading ? null : <Filter />}
+          {props.isLoading ? null : <Filter />}
           <GridList>
-            {isLoading ? (
+            {props.isLoading ? (
               <p>Loading...</p>
             ) : (
               [
-                posts &&
-                  posts.map((item) => (
-                    <GridItem
-                      key={item.title}
-                      postersrc={item.images['Poster Art'].url}
-                      title={item.title}
-                    />
-                  )),
+                props.posts.map((item) => (
+                  <GridItem
+                    key={item.title}
+                    postersrc={item.images['Poster Art'].url}
+                    title={item.title}
+                  />
+                )),
               ]
             )}
           </GridList>
@@ -45,4 +42,13 @@ const Movies = () => {
   )
 }
 
-export default Movies
+const mapStateToProps = (state) => {
+  return {
+    posts: state.posts,
+    isLoading: state.isLoading,
+    message: state.message,
+    appliedFilters: state.appliedFilters,
+  }
+}
+
+export default connect(mapStateToProps, { getMovieData })(Movies)

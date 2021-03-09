@@ -5,35 +5,33 @@ import Footer from '@Components/Footer'
 import Filter from '@Components/Filter'
 import GridList from '@Components/GridList'
 import GridItem from 'src/Elements/GridItem'
-import { useDispatch, useSelector } from 'react-redux'
+import { connect, useDispatch } from 'react-redux'
 import { getSeriesData } from 'src/Redux/Actions/index'
 
-function Series() {
+const Series = (props) => {
   const dispatch = useDispatch()
-  const { posts, isLoading, message } = useSelector((state) => state.postData)
 
   useEffect(() => {
-    message === '' ? dispatch(getSeriesData()) : console.log('dolu')
+    dispatch(getSeriesData())
   }, [])
   return (
     <>
       <Header subtitle={'Series'} />
       <main className={styles.main}>
         <div className={styles.container}>
-          {isLoading ? null : <Filter />}
+          {props.isLoading ? null : <Filter />}
           <GridList>
-            {isLoading ? (
+            {props.isLoading ? (
               <p>Loading...</p>
             ) : (
               [
-                posts &&
-                  posts.map((item) => (
-                    <GridItem
-                      key={item.title}
-                      postersrc={item.images['Poster Art'].url}
-                      title={item.title}
-                    />
-                  )),
+                props.posts.map((item) => (
+                  <GridItem
+                    key={item.title}
+                    postersrc={item.images['Poster Art'].url}
+                    title={item.title}
+                  />
+                )),
               ]
             )}
           </GridList>
@@ -44,4 +42,13 @@ function Series() {
   )
 }
 
-export default Series
+const mapStateToProps = (state) => {
+  return {
+    posts: state.posts,
+    isLoading: state.isLoading,
+    message: state.message,
+    appliedFilters: state.appliedFilters,
+  }
+}
+
+export default connect(mapStateToProps, { getSeriesData })(Series)

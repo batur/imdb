@@ -8,8 +8,7 @@
         "alias": {
           "@GlobalCss": "./src/Styles",
           "@Components": "./src/Components",
-          "@Elements": "./src/Elements",
-          "@Redux": ".src/Redux"
+          "@Elements": "./src/Elements"
         }
       }
     ]

@@ -8,7 +8,7 @@ const filterReducers = (state = initialState, action) => {
       return {
         ...state,
         isLoading: true,
-        error: '',
+        message: '',
       }
     case types.MOVIES_SUCCESS:
       const newMoviesState = Object.assign([], action.payload.entries)
@@ -18,7 +18,7 @@ const filterReducers = (state = initialState, action) => {
         posts: newMovies.splice(0, 21),
         appliedFilters: null,
         isLoading: false,
-        error: '',
+        message: '',
       }
 
     case types.SERIES_SUCCESS:
@@ -29,7 +29,7 @@ const filterReducers = (state = initialState, action) => {
         posts: newSeries.splice(0, 21),
         appliedFilters: null,
         isLoading: false,
-        error: '',
+        message: '',
       }
 
     case types.ERROR:
@@ -38,7 +38,7 @@ const filterReducers = (state = initialState, action) => {
         posts: [],
         appliedFilters: [],
         isLoading: false,
-        error: action.payload,
+        message: action.payload,
       }
     case types.SORT_TITLE:
       const sortTitle = Object.assign([{}], state.posts)

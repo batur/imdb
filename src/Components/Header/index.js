@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Button from '@Elements/Button'
 import styles from './style.module.scss'
+import PropTypes from 'prop-types'
 
 export default function index({ subtitle }) {
   return (
@@ -30,4 +31,8 @@ export default function index({ subtitle }) {
       </header>
     </>
   )
+}
+
+index.propTypes = {
+  subtitle: PropTypes.string.isRequired,
 }

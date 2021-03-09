@@ -16,3 +16,14 @@ export const getSeriesData = () => (dispatch) => {
     .then((response) => dispatch({ type: types.SERIES_SUCCESS, payload: response.data }))
     .catch((error) => dispatch({ type: types.ERROR, payload: error.message }))
 }
+
+export const sortByTitle = (payload) => (dispatch) => {
+  dispatch({ type: types.SORT_TITLE, payload })
+}
+export const sortByYear = (payload) => (dispatch) => {
+  dispatch({ type: types.SORT_YEAR, payload })
+}
+
+export const filterByTitle = (payload) => (dispatch) => {
+  dispatch({ type: types.FILTER, payload })
+}

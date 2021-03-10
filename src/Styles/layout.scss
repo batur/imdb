@@ -1,8 +1,53 @@
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$extraLarge: 1200px;
+$huge: 1440px;
+
 .container {
-  width: 80%;
+  width: 95%;
 }
 
-@media only screen and (min-width: 600px) {
+.main {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 0.2em 0;
+  flex: 1 0 auto;
 }
-@media only screen and (min-width: 768px) {
+
+@media screen and (min-width: $huge) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media screen and (min-width: $extraLarge) and (max-width: $huge) {
+  .container {
+    width: 85%;
+  }
+}
+
+@media screen and(min-width: $large) and (max-width: $extraLarge) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: $medium) and (max-width: $large) {
+  .container {
+    width: 85%;
+  }
+}
+
+@media screen and (min-width: $small) and (max-width: $medium) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: $small) {
+  .container {
+    width: 95%;
+  }
 }

@@ -18,8 +18,9 @@ function Sort() {
   }
   return (
     <div className={styles.sortBox}>
-      <div className={styles.form}>
+      <div className={styles.sortBox__form}>
         <select
+          className={styles.form__sort}
           onChange={(e) => {
             sortByInput(e)
           }}

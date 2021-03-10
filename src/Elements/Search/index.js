@@ -17,16 +17,16 @@ function Search() {
   }, [])
   return (
     <div className={styles.searchBox}>
-      <div className={styles.form}>
+      <div className={styles.searchBox__form}>
         <input
-          className={styles.input}
+          className={styles.form__input}
           type="text"
           placeholder="Search..."
           onChange={(e) => {
             filterByValue(e)
           }}
         />
-        <button className={styles.searchbtn}>
+        <button className={styles.form__searchbtn}>
           <SearchIcon />
         </button>
       </div>

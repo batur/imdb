@@ -7,6 +7,7 @@ import GridList from '@Components/GridList'
 import GridItem from 'src/Elements/GridItem'
 import { connect, useDispatch } from 'react-redux'
 import { getSeriesData } from 'src/Redux/Actions/index'
+import Head from 'next/head'
 
 const Series = (props) => {
   const dispatch = useDispatch()
@@ -16,6 +17,10 @@ const Series = (props) => {
   }, [])
   return (
     <>
+      <Head>
+        <title>Popular Series | Demo Streaming </title>
+        <meta property="og:title" content="My page title" key="title" />
+      </Head>
       <Header subtitle={'Series'} />
       <main className={styles.main}>
         <div className={styles.container}>

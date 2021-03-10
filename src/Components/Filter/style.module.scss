@@ -1,8 +1,14 @@
 @import '../../Styles/theme.scss';
+@import '../../Styles/layout.scss';
 
 .filter {
   width: 100%;
   margin: 1em 0;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: $small) {
+    flex-direction: column;
+    row-gap: 1.2em;
+  }
 }

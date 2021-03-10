@@ -1,15 +1,18 @@
 @import '../../Styles/theme.scss';
+@import '../../Styles/layout.scss';
 
 .searchBox {
   display: flex;
+  flex-grow: 1;
   align-items: center;
 }
 
-.form {
+.searchBox__form {
   display: flex;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.18);
 }
-.input {
+
+.form__input {
   font-size: 0.8em;
   font-weight: 400;
   border: none;
@@ -20,7 +23,7 @@
   }
 }
 
-.searchbtn {
+.form__searchbtn {
   background-color: $base-blue;
   border: none;
   display: flex;
@@ -38,5 +41,14 @@
     path {
       fill: $text-1;
     }
+  }
+}
+
+@media screen and (max-width: $small) {
+  .searchBox__form {
+    flex-grow: 1;
+  }
+  .form__input {
+    flex-grow: 1;
   }
 }

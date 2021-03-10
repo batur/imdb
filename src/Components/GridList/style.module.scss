@@ -1,9 +1,24 @@
 @import '../../Styles/theme.scss';
+@import '../../Styles/layout.scss';
 
 .list {
-  min-height: 40vh;
   display: grid;
-  column-gap: 0.6em;
+  column-gap: 1em;
   row-gap: 0.4em;
-  grid-template-columns: 14% 14% 14% 14% 14% 14% 14%;
+  grid-template-columns: repeat(7, minmax(140px, 1fr));
+
+  @media screen and (max-width: $small) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media screen and (min-width: $medium) and (max-width: $large) {
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+  }
+
+  @media screen and (min-width: $large) and (max-width: $extraLarge) and (orientation: 'landscape') {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  @media screen and (min-width: $large) and (max-width: $extraLarge) and (orientation: 'portrait') {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }

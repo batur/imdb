@@ -18,7 +18,7 @@ export default function index() {
           <p>Oops, something went wrong...</p>
           <Link href={'/'}>
             <a>
-              <h2 className={styles.homebtn}>Go Back Home</h2>
+              <h2 className={styles.homebtn}>◀️ Go Back Home</h2>
             </a>
           </Link>
         </div>

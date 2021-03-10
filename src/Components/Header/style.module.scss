@@ -5,27 +5,15 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  .main {
-    width: 100%;
-    display: flex;
-    background-color: $base-blue;
-    justify-content: center;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.66);
-    z-index: 1;
-  }
+}
 
-  .sub {
-    width: 100%;
-    display: flex;
-    background-color: $gray-light;
-    justify-content: center;
-
-    .container .subtitle {
-      font-size: 1.5em;
-      font-weight: 600;
-      color: $text-1;
-    }
-  }
+.header_main {
+  width: 100%;
+  display: flex;
+  background-color: $base-blue;
+  justify-content: center;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.66);
+  z-index: 1;
 
   .container {
     display: flex;
@@ -35,8 +23,7 @@
       align-items: center;
       flex-grow: 1;
 
-      .title {
-        font-size: 2em;
+      .brand_title {
         font-weight: 600;
         color: $text-1;
       }
@@ -46,7 +33,44 @@
       display: flex;
       align-items: center;
       padding: 0 0.3em;
-      column-gap: 1.2em;
     }
+  }
+}
+
+.header_sub {
+  width: 100%;
+  display: flex;
+  background-color: $gray-light;
+  justify-content: center;
+
+  .container {
+    .subtitle {
+      font-weight: 600;
+      color: $text-1;
+    }
+  }
+}
+
+@media screen and (max-width: $small) {
+  .brand_title {
+    font-size: 1.3em;
+  }
+  .subtitle {
+    font-size: 1em;
+  }
+  .btngroup {
+    column-gap: 0.6em;
+  }
+}
+
+@media screen and (min-width: $small) {
+  .brand_title {
+    font-size: 2em;
+  }
+  .subtitle {
+    font-size: 1.5em;
+  }
+  .btngroup {
+    column-gap: 1.2em;
   }
 }

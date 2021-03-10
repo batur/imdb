@@ -31,7 +31,12 @@ function Home() {
         <div className={styles.container}>
           <GridList>
             {pages.map((item) => (
-              <GridItem key={item.title} title={item.title} postersrc={item.poster} />
+              <GridItem
+                key={item.title}
+                title={item.title}
+                postersrc={item.poster}
+                path={`/${item.title.toLowerCase()}`}
+              />
             ))}
           </GridList>
         </div>

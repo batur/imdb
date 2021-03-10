@@ -10,8 +10,8 @@ body {
 
 #__next {
   display: flex;
-  min-width: 100%;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 a {

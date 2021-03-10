@@ -1,4 +1,5 @@
 @import '../../Styles/theme.scss';
+@import '../../Styles/layout.scss';
 
 .btnPrimary {
   display: flex;
@@ -30,4 +31,14 @@
     transition: 200ms;
     background-color: lighten($color: $gray-light, $amount: 10%);
   }
+}
+
+@media screen and (max-width: $small) {
+  .btnPrimary,
+  .btnSecondary {
+    font-size: 0.6em;
+  }
+}
+
+@media screen and (min-width: $small) {
 }

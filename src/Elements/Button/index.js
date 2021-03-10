@@ -13,5 +13,5 @@ function Button({ children, variant = 2, ...props }) {
 export default Button
 
 Button.propTypes = {
-  variant: PropTypes.number.isRequired,
+  variant: PropTypes.number,
 }

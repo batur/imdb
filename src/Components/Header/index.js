@@ -8,12 +8,12 @@ export default function index({ subtitle }) {
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.main}>
+        <div className={styles.header_main}>
           <div className={styles.container}>
             <div className={styles.brand}>
               <Link href="/">
                 <a>
-                  <h1 className={styles.title}>Demo Streaming</h1>
+                  <h1 className={styles.brand_title}>Demo Streaming</h1>
                 </a>
               </Link>
             </div>
@@ -23,7 +23,7 @@ export default function index({ subtitle }) {
             </div>
           </div>
         </div>
-        <div className={styles.sub}>
+        <div className={styles.header_sub}>
           <div className={styles.container}>
             <h2 className={styles.subtitle}>Popular {subtitle}</h2>
           </div>

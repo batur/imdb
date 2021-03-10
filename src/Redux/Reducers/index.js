@@ -61,7 +61,7 @@ const filterReducers = (state = initialState, action) => {
     case types.FILTER_SET:
       return { ...state, appliedFilters: state.posts }
     case types.FILTER:
-      let value = action.payload.value
+      let value = action.payload.value.toLowerCase()
       let filteredValues = state.posts.filter((item) => {
         return item.title.toLowerCase().includes(value)
       })

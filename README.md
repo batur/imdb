@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Front-End Challenge
 
-## Getting Started
+### Guide
 
-First, run the development server:
+First of all
 
-```bash
-npm run dev
-# or
-yarn dev
+```
+git clone https://github.com/cosakin/challenge.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+After that
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+npm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+And Run
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+npm run dev
+```
 
-## Learn More
+**Voilà**
 
-To learn more about Next.js, take a look at the following resources:
+**If You Want to run build verison**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run `npm run build` and `npm run start`, that's it.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Also see demo in
 
-## Deploy on Vercel
+### Links
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Base Repo](https://github.com/pankod/frontend-challenge)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Tools and Frameworks
+
+- [React](https://reactjs.org)
+- [Redux](https://redux.js.org/)
+- [Next](https://nextjs.org)
+- [Eslint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Babel](https://babeljs.io/)
+- [SVGR](https://react-svgr.com/docs/cli/)

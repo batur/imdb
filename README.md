@@ -26,7 +26,7 @@ npm run dev
 
 Run `npm run build` and `npm run start`, that's it.
 
-Also see demo in
+Also see demo in [Vercel](https://challenge-git-dev-cosakin.vercel.app/)
 
 ### Links
 

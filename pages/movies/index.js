@@ -1,7 +1,4 @@
 import React, { useEffect } from 'react'
-import styles from './style.module.scss'
-import Header from '@Components/Header'
-import Footer from '@Components/Footer'
 import Filter from '@Components/Filter'
 import GridList from '@Components/GridList'
 import GridItem from 'src/Elements/GridItem'
@@ -21,31 +18,25 @@ const Movies = (props) => {
         <title>Popular Movies | Demo Streaming </title>
         <meta property="og:title" content="My page title" key="title" />
       </Head>
-      <Header subtitle={'Movies'} />
-      <main className={styles.main}>
-        <div className={styles.container}>
-          {props.isLoading ? null : <Filter />}
-          <GridList>
-            {props.isLoading ? (
-              <p>Loading...</p>
-            ) : props.message ? (
-              <p>{props.message}</p>
-            ) : (
-              [
-                items &&
-                  items.map((item) => (
-                    <GridItem
-                      key={item.title}
-                      postersrc={item.images['Poster Art'].url}
-                      title={item.title}
-                    />
-                  )),
-              ]
-            )}
-          </GridList>
-        </div>
-      </main>
-      <Footer />
+      {props.isLoading ? null : <Filter />}
+      <GridList>
+        {props.isLoading ? (
+          <p>Loading...</p>
+        ) : props.message ? (
+          <p>{props.message}</p>
+        ) : (
+          [
+            items &&
+              items.map((item) => (
+                <GridItem
+                  key={item.title}
+                  postersrc={item.images['Poster Art'].url}
+                  title={item.title}
+                />
+              )),
+          ]
+        )}
+      </GridList>
     </>
   )
 }

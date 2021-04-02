@@ -7,11 +7,13 @@ function Home() {
   const pages = [
     {
       title: 'Movies',
-      poster: 'dummy.jpg',
+      poster:
+        'https://streamcoimg-a.akamaihd.net/000/958/726/958726-PosterArt-46061b8e3d5b4c8fd690d045ee524d0f.jpg',
     },
     {
       title: 'Series',
-      poster: 'dummy.jpg',
+      poster:
+        'https://streamcoimg-a.akamaihd.net/000/120/27/12027-PosterArt-3f8c0625d76d30c9a583c647e4c29c67.jpg',
     },
   ]
   return (

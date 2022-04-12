@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import SearchIcon from '@Elements/Icons/Search'
+import SearchIcon from 'src/Elements/Icons/Search'
 import styles from './style.module.scss'
 import { connect, useDispatch } from 'react-redux'
 import { filterByTitle } from 'src/Redux/Actions'

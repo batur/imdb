@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
-import Header from '@Components/Header'
-import Footer from '@Components/Footer'
+import Header from 'src/Components/Header'
+import Footer from 'src/Components/Footer'
 import styles from './style.module.scss'
 import Link from 'next/link'
 

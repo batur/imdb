@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -33,9 +32,3 @@ function GridItem({ title, postersrc, path }) {
 }
 
 export default GridItem
-
-GridItem.propTypes = {
-  title: PropTypes.string.isRequired,
-  postersrc: PropTypes.string.isRequired,
-  link: PropTypes.string,
-}

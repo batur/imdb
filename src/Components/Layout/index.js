@@ -1,8 +1,7 @@
 import React from 'react'
-import Header from '@Components/Header'
-import Footer from '@Components/Footer'
+import Header from '../Header'
+import Footer from '../Footer'
 import styles from './Layout.module.scss'
-import GridList from '@Components/GridList'
 
 function Layout({ children }) {
   return (

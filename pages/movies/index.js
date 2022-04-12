@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import Filter from '@Components/Filter'
-import GridList from '@Components/GridList'
+import Filter from 'src/Components/Filter'
+import GridList from 'src/Components/GridList'
 import GridItem from 'src/Elements/GridItem'
 import { connect, useDispatch } from 'react-redux'
 import { getMovieData } from 'src/Redux/Actions/index'

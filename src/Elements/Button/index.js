@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styles from './style.module.scss'
 
 function Button({ children, variant = 2, ...props }) {
@@ -11,7 +10,3 @@ function Button({ children, variant = 2, ...props }) {
 }
 
 export default Button
-
-Button.propTypes = {
-  variant: PropTypes.number,
-}

@@ -1,5 +1,5 @@
-import '@GlobalCss/normalize.css'
-import '@GlobalCss/globals.css'
+import 'src/Styles/normalize.css'
+import 'src/Styles/globals.css'
 import React from 'react'
 import { Provider } from 'react-redux'
 import { useStore } from 'src/Redux/Store'

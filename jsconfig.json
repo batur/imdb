@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@GlobalCss": ["./src/Styles"],
+      "@Components": ["./src/Components"],
+      "@Elements": ["./src/Elements"],
+    }
   }
 }
